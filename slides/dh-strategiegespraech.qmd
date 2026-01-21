@@ -1,7 +1,13 @@
 ---
 title: "Untitled"
-format: revealjs
-smaller: true
+format: 
+  revealjs:
+    slide-number: true
+    smaller: true
+    scrollable: true
+    header-logo: style/logoTU.png
+    header-logo2: style/logoUB.png
+    theme: [default, style/custom.scss]
 lang: "de"
 editor_options: 
   chunk_output_type: console
