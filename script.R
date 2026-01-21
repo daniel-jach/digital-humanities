@@ -30,6 +30,10 @@ for(i in seq_along(files)){
   
 }
 
+saveRDS(df, "data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
+
+
+
 df <- df |> 
   filter(complete.cases(df)) |> 
   mutate(dates = as.numeric(dates)) |> 
