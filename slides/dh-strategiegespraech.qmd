@@ -14,8 +14,8 @@ editor_options:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_knit$set(root.dir = "M:/digital-humanities/slides/")
-setwd("M:/digital-humanities/slides/")
+knitr::opts_knit$set(root.dir = "C:/Users/mdanjach/Sciebo/home/digital-humanities/slides/")
+setwd("C:/Users/mdanjach/Sciebo/home/digital-humanities/slides/")
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = FALSE, cache = FALSE)
 
 

@@ -1,6 +1,7 @@
 # do not sync to github
 
 /data/data_raw/
-/slides/*
-!/slides/*.qmd
+
+
+/slides/*files/
 /literature/pdf/
