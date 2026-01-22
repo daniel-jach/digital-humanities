@@ -4,12 +4,16 @@ library(tidyverse)
 library(viridis)
 
 
-setwd("M:/digital-humanities/")
+setwd("C:/Users/mdanjach/Sciebo/home/digital-humanities/")
 
 files <- list.files("data/data_raw/beratungsprotokolle_html_2026-01-20/", full.names = TRUE)
 
 faks <- vector(length = length(files))
 dates <- vector(length = length(files))
+names <- vector(length = length(files))
+records <- vector(length = length(files))
+record_num <- rep(NA,length(files))
+
 for(i in seq_along(files)){
   
   file <- files[i]
@@ -17,18 +21,36 @@ for(i in seq_along(files)){
   html <- read_html(file)
   
   infos <- html |> 
-    html_node("table") |> 
-    html_text()
-    
-  faks[i] <- str_extract(infos, regex("Fakultät(\\d\\d)"), group = 1)
-  dates[i] <- str_extract(infos, regex("(\\d\\d\\d\\d)"), group = 1)
+    html_node("table")
+  
+  if(is.na(infos)){
+    next
+  }
+  
+  rows <- infos |> 
+    html_nodes("tr")
+  
+  dates[i] <- rows[1] |> html_node("td") |> html_text() |> str_extract(regex("\\d\\d\\d\\d"))
+  names[i] <- rows[2] |> html_node("td") |> html_text()
+  faks[i] <- rows[4] |> html_node("td") |> html_text() |> str_extract(regex("\\d\\d"))
+  records[i] <- file
+  record_num[i] <- i
   
   
   print(paste0(i, "/", length(files)))
-  
-  df <- tibble(faks = faks, dates = dates)
-  
+
 }
+
+df <- tibble(faks = faks, dates = dates, names = names, records = records, record_num = record_num)
+
+df <- df |> 
+  mutate(
+    across(1:4, ~ na_if(., "FALSE")))
+
+write.csv(df, "data/data_processed/beratungsprotokolle_html_2026-01-20.csv")
+df <- read_csv("data/data_processed/beratungsprotokolle_html_2026-01-20_korrigiert.csv")
+
+df <- df[complete.cases(df),]
 
 saveRDS(df, "data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
 

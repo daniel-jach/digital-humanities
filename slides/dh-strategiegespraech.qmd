@@ -8,9 +8,16 @@ format:
     header-logo: style/logoTU.png
     header-logo2: style/logoUB.png
     theme: [default, style/custom.scss]
+    css: style/custom.css
+filters:
+  - tudo-header
 lang: "de"
 editor_options: 
   chunk_output_type: console
+execute:
+  echo: false  
+  warning: false
+  cache: false
 ---
 
 ```{r setup, include=FALSE}
@@ -18,14 +25,14 @@ knitr::opts_knit$set(root.dir = "C:/Users/mdanjach/Sciebo/home/digital-humanitie
 setwd("C:/Users/mdanjach/Sciebo/home/digital-humanities/slides/")
 knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = FALSE, cache = FALSE)
 
-
 library(rvest)
 library(stringr)
 library(tidyverse)
 library(viridis)
 library(kableExtra)
 library(knitr)
-
+library(gridExtra)
+library(ggwordcloud)
 ```
 
 ## Was ist DH?
@@ -39,8 +46,6 @@ bla
 df <- readRDS("./../data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
 
 df <- df |> 
-  filter(complete.cases(df)) |> 
-  mutate(dates = as.numeric(dates)) |> 
   mutate(
     faks = as.numeric(faks), 
     fakType = case_when(
@@ -55,41 +60,57 @@ df <- df |>
       TRUE ~ as.character(faks)  
     )
   ) |> 
-  mutate(fakType = reorder(fakType, faks)) 
+  mutate(fakType = factor(fakType, levels = rev(c("Lower Faculties", "Business and Economics", "Education & Psychology", "Rehabilitation", "Humanities and Theology", "Cultural Studies", "Arts and Sports", "Social Sciences")))) 
 ```
 
 
-```{r faculties_fdm-consulting_plot}
-
-svg("img/faculties_fdm-consulting.svg")
-df |> 
-  mutate(faks = as.character(faks)) |> 
-  count(faks, dates) |>
-  group_by(dates) |> 
-  ggplot(aes(x = dates, y = n, group = reorder(faks, -as.numeric(faks)), fill = reorder(faks, -as.numeric(faks)))) +
+```{r fdm-consulting_faculties}
+barplot <- df |> 
+  count(fakType, dates) |> 
+  ggplot(aes(x = dates, y = n, group = fakType, fill = fakType)) +
   geom_bar(stat = 'identity', color = "black") +
-  scale_fill_viridis_d(direction = -1) +
   theme_minimal() +
   labs(fill = "Fakultät", x = "Jahr") +
-  theme(text = element_text(size = 24))
+  scale_color_viridis_d(direction = -1) +
+  theme(text = element_text(size = 18), legend.position = "none")
+
+
+legend <- get_legend(barplot + theme(legend.position = "right"))
+
+svg("img/barplot_fdm-consulting_faculties.svg", width = 12)
+grid.arrange(barplot, legend, ncol = 2, heights = c(1, 0.1), widths = c(1, 0.3), clip = "off")
 dev.off()
 ```
 
-:::: {.columns}
-::: {.column width="48%"}
-![](img/faculties_fdm-consulting.svg)
-:::
-:::{.column width="48%"}
-```{r faculties_fdm-consulting_table, include=TRUE}
-df |> 
-  count(faks) |> 
-  filter(as.numeric(faks) >= 14) |> 
-  filter(as.numeric(faks) > 10) |> 
-  t() |> 
-  kable()
+![](img/barplot_fdm-consulting_faculties.svg)
+
+##
+
+
+
+
+```{r wordcloud_fdm-consulting_researchers}
+wordcloud <- df |> 
+  count(names, fakType) |> 
+  ggplot(aes(label = names, size = n, colour = fakType)) +
+  geom_text_wordcloud(show.legend = FALSE) +
+  scale_size_area(max_size = 8) +
+  theme_minimal() +
+  scale_color_viridis_d(direction = -1) 
+
+legend <- get_legend(barplot + theme(legend.position = "right"))
+
+svg("img/wordcloud_fdm-consulting_researchers.svg", width = 12)
+grid.arrange(wordcloud, legend, ncol = 2, heights = c(1, 0.1), widths = c(1, 0.3), clip = "off")
+dev.off()
 ```
-:::
-::::
+
+
+![](img/wordcloud_fdm-consulting_researchers.svg)
+
+
+
+
 
 ## Ziele
 
