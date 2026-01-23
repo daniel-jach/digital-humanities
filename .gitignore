@@ -2,7 +2,7 @@
 
 /data/data_raw/
 
-/slides/*
-!/slides/*.qmd
+/slides/
+
 
 /literature/pdf/
