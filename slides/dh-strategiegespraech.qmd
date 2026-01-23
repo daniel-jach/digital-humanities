@@ -1,0 +1,128 @@
+---
+title: "Untitled"
+format: 
+  revealjs:
+    slide-number: true
+    smaller: true
+    scrollable: true
+    header-logo: style/logoTU.png
+    header-logo2: style/logoUB.png
+    theme: [default, style/custom.scss]
+    css: style/custom.css
+filters:
+  - tudo-header
+lang: "de"
+editor_options: 
+  chunk_output_type: console
+execute:
+  echo: false  
+  warning: false
+  message: false
+  cache: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_knit$set(root.dir = "C:/Users/mdanjach/Sciebo/home/digital-humanities/slides/")
+setwd("C:/Users/mdanjach/Sciebo/home/digital-humanities/slides/")
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, include = FALSE, cache = FALSE)
+
+library(rvest)
+library(stringr)
+library(tidyverse)
+library(viridis)
+library(knitr)
+library(gridExtra)
+library(gridtext)
+library(ggwordcloud)
+library(ggpubr)
+```
+
+## Was ist DH?
+
+bla
+
+## Ausgangslage
+
+```{r faculties_fdm-consulting_data}
+df <- readRDS("./../data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
+
+df <- df |> 
+  mutate(
+    faks = as.numeric(faks), 
+    fakType = case_when(
+      faks %in% c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10) ~ "Lower Faculties",
+      faks %in% c(11) ~ "Business and Economics",
+      faks %in% c(12) ~ "Education & Psychology",
+      faks %in% c(13) ~ "Rehabilitation",
+      faks %in% c(14) ~ "Humanities and Theology",
+      faks %in% c(15) ~ "Cultural Studies",
+      faks %in% c(16) ~ "Arts and Sports",
+      faks %in% c(17) ~ "Social Sciences",
+      TRUE ~ as.character(faks)  
+    )
+  ) |> 
+  mutate(fakType = factor(fakType, levels = rev(c("Lower Faculties", "Business and Economics", "Education & Psychology", "Rehabilitation", "Humanities and Theology", "Cultural Studies", "Arts and Sports", "Social Sciences")))) 
+
+
+```
+
+
+```{r fdm-consulting_faculties_plots, include=FALSE}
+barplot <- df |> 
+  count(fakType, dates) |> 
+  ggplot(aes(x = dates, y = n, group = fakType, fill = fakType)) +
+  geom_bar(stat = 'identity', color = "black") +
+  theme_minimal() +
+  labs(fill = "Fakultät", x = "Jahr") +
+  scale_fill_viridis_d(direction = -1) +
+  theme(text = element_text(size = 24), legend.position = "none")
+
+svg("img/barplot_fdm-consulting_faculties.svg", width = 9)
+barplot
+dev.off()
+
+wordcloud <- df |> 
+  count(names, fakType) |> 
+  ggplot(aes(label = names, size = n, colour = fakType)) +
+  geom_text_wordcloud(show.legend = FALSE) +
+  scale_size_area(max_size = 8) +
+  theme_minimal() +
+  scale_color_viridis_d(direction = -1) +
+  theme(plot.background = element_rect(fill = viridis(1)))
+
+svg("img/wordcloud_fdm-consulting_researchers.svg", width = 9)
+wordcloud
+dev.off()
+
+legend <- get_legend(barplot + theme(legend.position = "right"))
+svg("img/legend_fdm-consulting.svg", width = 4)
+plot(legend)
+dev.off()
+
+```
+
+::: {.columns}
+:::: {.column width = "68%"}
+::::: {.r-stack}
+![](img/barplot_fdm-consulting_faculties.svg)
+
+![](img/wordcloud_fdm-consulting_researchers.svg){.fragment}
+:::::
+::::
+:::: {.column width = "28%"}
+![](img/legend_fdm-consulting.svg)
+::::
+:::
+
+
+
+
+## Ziele
+
+## Strategie
+
+## DH an der TUDO
+
+## Erste Kontakte und Beispiel
+
+

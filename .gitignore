@@ -2,6 +2,10 @@
 /*
 
 # Except 
+!/slides/
+/slides/*
+!/slides/*.qmd
+
 !/data/
 /data/*
 !/data/data_processed/
