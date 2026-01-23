@@ -1,6 +1,4 @@
-# do not sync to github
+# do not sync to github except:
 
-/data/data_raw/
-/slides/
+*
 
-/literature/pdf/
