@@ -1,8 +1,0 @@
-title: header-tu-dortmund
-author: Marius Bommert
-version: 0.0.1
-quarto-required: ">=1.4.0"
-contributes:
-  filters:
-    - tudo-header.lua
-
