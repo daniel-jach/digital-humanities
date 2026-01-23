@@ -20,7 +20,7 @@
 19,12,2024,Masek,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-02-16-Masek-LM-12_432867356.html,19
 20,12,2024,Buddenberg,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-02-19-Buddeberg-LM-12_432867373.html,20
 21,14,2024,Kipfer,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-02-20-Kipfer-LM-14_432867364.html,21
-22,17,2024,Hast/Kurz,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-02-22-Hast_und_Kurz_LM-17_429917221.html,22
+22,17,2024,Hast,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-02-22-Hast_und_Kurz_LM-17_429917221.html,22
 23,NA,2024,Ghalgaoui,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-03-06-Ghalhaoui_Lektorat_JS-02_432866114.html,23
 24,2,2024,Bugard,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-03-07-Burgard-JS-02_432866743.html,24
 25,7,2024,Eichholz,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-03-19-Eichholz-BZ-07_434178998.html,25
@@ -54,7 +54,7 @@
 53,17,2024,Kanschik,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-11_Kanschik_LMJS-17_460129810.html,53
 54,4,2024,Howar,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-12-Howar_OK_4_460130421.html,54
 55,12,2024,Steinmayr,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-16_Steinmayr-JS-12_460131925.html,55
-56,7,2024,Brock/Geissendorf,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-17-Brock_Geissendorf-BZ_PK-07_461602935.html,56
+56,7,2024,Brock,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-17-Brock_Geissendorf-BZ_PK-07_461602935.html,56
 57,11,2024,Jimenenz,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-23-Jimenez-LM-11_463375720.html,57
 58,7,2024,Mowe,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-23-Mowe-LM-OK-07_463375734.html,58
 59,13,2024,Wild,data/data_raw/beratungsprotokolle_html_2026-01-20/2024-07-30-Wild-LM-13_463375780.html,59
@@ -138,11 +138,11 @@
 137,15,2025,Konuk,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-03-21-Konuk-WK-15_521176209.html,137
 138,16,2025,Farrahi,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-01_Farrahi_JS_16_524976338.html,138
 139,12,2025,Sauerwein,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-02-Sauerwein-WK-12_524977173.html,139
-140,12,2025,Geier/Ruberg,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-03-Geier_Ruberg-WK-12_524977177.html,140
+140,12,2025,Geier,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-03-Geier_Ruberg-WK-12_524977177.html,140
 141,1,2025,Buchheim,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-07-Buchheim-BZ-01_524978363.html,141
 142,13,2025,Wolf,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-08-Wolf-BZ-13_526549108.html,142
 143,7,2025,Patsch,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-23-Patsch-JS-07_529727809.html,143
-144,5,2025,Baumeister/Thiel,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-24-Baumeister-Thiel-BZ-05_529728639.html,144
+144,5,2025,Baumeister,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-24-Baumeister-Thiel-BZ-05_529728639.html,144
 145,7,2025,Hochkamp,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-28-Hochkamp-BZ-07_529729928.html,145
 146,7,2025,Langenbach,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-28-Langenbach-BZ-07_529729595.html,146
 147,6,2025,Bartsch,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-04-30-Bartsch-JS-BZ-06_531399233.html,147
@@ -204,7 +204,7 @@
 203,NA,NA,NA,NA,NA
 204,7,2025,Patsch,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-09-12-Patsch-OK-07_567641937.html,204
 205,13,2025,Hesper,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-09-15-Hesper-WK_BZ-13_567641645.html,205
-206,17,2025,Bakcs/Pelka,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-09-16-Backs_Pelka-WK_BZ-17_567642098.html,206
+206,17,2025,Bakcs,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-09-16-Backs_Pelka-WK_BZ-17_567642098.html,206
 207,7,2025,Patsch,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-09-17-Patsch-OK-07_569967311.html,207
 208,2,2025,Jaime Ruz,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-09-17-Ruz-BZ-02_569967120.html,208
 209,7,2025,Patsch,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-09-18-Patsch-BZ-07_569968899.html,209
@@ -236,7 +236,7 @@
 235,8,2025,Tappertzhofen,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-17-Tappertzhofen-BZ-08_585075327.html,235
 236,15,2025,Buschfeld,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-19-Buschfeld-WK-15_586777171.html,236
 237,16,2025,Remes,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-21-Remes-BZ-16_586778617.html,237
-238,1,2025,Schreynemackers/Buchheim,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-21-Schreynemackers-BZ-01_586778747.html,238
+238,1,2025,Schreynemackers,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-21-Schreynemackers-BZ-01_586778747.html,238
 239,15,2025,Vujadinovic,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-24-Vujadinovic-BZ-15_586779634.html,239
 240,12,2025,Niemann,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-25-Niemann-BZ-12_586780443.html,240
 241,16,2025,Schmidt,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-11-26-Schmidt_WK_OK_16_588546107.html,241
@@ -250,7 +250,7 @@
 249,15,2025,Pöhlmann,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-12-17-Poehlmann-15-JSWK_595231230.html,249
 250,15,2025,Zimmer,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-12-18-Zimmer-WK-15_595231966.html,250
 251,16,2025,Remes,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-12-19-Remes-DJJS-16_595232135.html,251
-252,12,2025,Schmitt/Horsthemke,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-12-19-Schmitt-WK-12_595232079.html,252
+252,12,2025,Schmitt,data/data_raw/beratungsprotokolle_html_2026-01-20/2025-12-19-Schmitt-WK-12_595232079.html,252
 253,NA,NA,NA,NA,NA
 254,13,2026,Röhm,data/data_raw/beratungsprotokolle_html_2026-01-20/2026-01-06-Roehm-JS-13_599819982.html,254
 255,8,2025,Tappertzhofen,data/data_raw/beratungsprotokolle_html_2026-01-20/2026-01-07-Tappertzhofen-BZ-08_599818872.html,255
@@ -267,12 +267,12 @@
 266,2,2022,Lüders,data/data_raw/beratungsprotokolle_html_2026-01-20/334890610.html,266
 267,16,2024,Schröder,data/data_raw/beratungsprotokolle_html_2026-01-20/426314960.html,267
 268,2,2024,Kröninger,data/data_raw/beratungsprotokolle_html_2026-01-20/431424793.html,268
-269,2,2024,Weingarten/Lühr,data/data_raw/beratungsprotokolle_html_2026-01-20/432865533.html,269
+269,2,2024,Weingarten,data/data_raw/beratungsprotokolle_html_2026-01-20/432865533.html,269
 270,2,2024,Kröninger,data/data_raw/beratungsprotokolle_html_2026-01-20/432867339.html,270
 271,2,2024,Kröninger,data/data_raw/beratungsprotokolle_html_2026-01-20/432867346.html,271
 272,15,2024,Rottschäfer,data/data_raw/beratungsprotokolle_html_2026-01-20/432868030.html,272
-273,13,2024,Möhring/Elstrodt-Wefing,data/data_raw/beratungsprotokolle_html_2026-01-20/458686778.html,273
-274,8,2024,Kleingarn/Brämer,data/data_raw/beratungsprotokolle_html_2026-01-20/470877146.html,274
+273,13,2024,Möhring,data/data_raw/beratungsprotokolle_html_2026-01-20/458686778.html,273
+274,8,2024,Kleingarn,data/data_raw/beratungsprotokolle_html_2026-01-20/470877146.html,274
 275,2,2024,Kröninger,data/data_raw/beratungsprotokolle_html_2026-01-20/490209763.html,275
 276,15,2024,Röder,data/data_raw/beratungsprotokolle_html_2026-01-20/490210235.html,276
 277,5,2024,Schürmeyer,data/data_raw/beratungsprotokolle_html_2026-01-20/492634264.html,277

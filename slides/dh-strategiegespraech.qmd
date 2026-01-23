@@ -17,6 +17,7 @@ editor_options:
 execute:
   echo: false  
   warning: false
+  message: false
   cache: false
 ---
 
@@ -29,10 +30,11 @@ library(rvest)
 library(stringr)
 library(tidyverse)
 library(viridis)
-library(kableExtra)
 library(knitr)
 library(gridExtra)
+library(gridtext)
 library(ggwordcloud)
+library(ggpubr)
 ```
 
 ## Was ist DH?
@@ -42,7 +44,6 @@ bla
 ## Ausgangslage
 
 ```{r faculties_fdm-consulting_data}
-
 df <- readRDS("./../data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
 
 df <- df |> 
@@ -61,53 +62,57 @@ df <- df |>
     )
   ) |> 
   mutate(fakType = factor(fakType, levels = rev(c("Lower Faculties", "Business and Economics", "Education & Psychology", "Rehabilitation", "Humanities and Theology", "Cultural Studies", "Arts and Sports", "Social Sciences")))) 
+
+
 ```
 
 
-```{r fdm-consulting_faculties}
+```{r fdm-consulting_faculties_plots, include=FALSE}
 barplot <- df |> 
   count(fakType, dates) |> 
   ggplot(aes(x = dates, y = n, group = fakType, fill = fakType)) +
   geom_bar(stat = 'identity', color = "black") +
   theme_minimal() +
   labs(fill = "Fakultät", x = "Jahr") +
-  scale_color_viridis_d(direction = -1) +
-  theme(text = element_text(size = 18), legend.position = "none")
+  scale_fill_viridis_d(direction = -1) +
+  theme(text = element_text(size = 24), legend.position = "none")
 
-
-legend <- get_legend(barplot + theme(legend.position = "right"))
-
-svg("img/barplot_fdm-consulting_faculties.svg", width = 12)
-grid.arrange(barplot, legend, ncol = 2, heights = c(1, 0.1), widths = c(1, 0.3), clip = "off")
+svg("img/barplot_fdm-consulting_faculties.svg", width = 9)
+barplot
 dev.off()
-```
 
-![](img/barplot_fdm-consulting_faculties.svg)
-
-##
-
-
-
-
-```{r wordcloud_fdm-consulting_researchers}
 wordcloud <- df |> 
   count(names, fakType) |> 
   ggplot(aes(label = names, size = n, colour = fakType)) +
   geom_text_wordcloud(show.legend = FALSE) +
   scale_size_area(max_size = 8) +
   theme_minimal() +
-  scale_color_viridis_d(direction = -1) 
+  scale_color_viridis_d(direction = -1) +
+  theme(plot.background = element_rect(fill = viridis(1)))
+
+svg("img/wordcloud_fdm-consulting_researchers.svg", width = 9)
+wordcloud
+dev.off()
 
 legend <- get_legend(barplot + theme(legend.position = "right"))
-
-svg("img/wordcloud_fdm-consulting_researchers.svg", width = 12)
-grid.arrange(wordcloud, legend, ncol = 2, heights = c(1, 0.1), widths = c(1, 0.3), clip = "off")
+svg("img/legend_fdm-consulting.svg", width = 4)
+plot(legend)
 dev.off()
+
 ```
 
+::: {.columns}
+:::: {.column width = "68%"}
+::::: {.r-stack}
+![](img/barplot_fdm-consulting_faculties.svg)
 
-![](img/wordcloud_fdm-consulting_researchers.svg)
-
+![](img/wordcloud_fdm-consulting_researchers.svg){.fragment}
+:::::
+::::
+:::: {.column width = "28%"}
+![](img/legend_fdm-consulting.svg)
+::::
+:::
 
 
 
