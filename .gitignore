@@ -1,5 +1,6 @@
-# do not sync to github except:
-
+# Ignore everything
 *
 
-!/data/data_processed/*
+# Except 
+!/data/data_processed/
+!/data/data_processed/**
