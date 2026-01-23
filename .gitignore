@@ -2,6 +2,9 @@
 /*
 
 # Except 
+
+!/scripts/
+
 !/slides/
 /slides/*
 !/slides/*.qmd
