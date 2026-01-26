@@ -50,9 +50,21 @@ df <- df |>
 write.csv(df, "data/data_processed/beratungsprotokolle_html_2026-01-20.csv")
 df <- read_csv("data/data_processed/beratungsprotokolle_html_2026-01-20_korrigiert.csv")
 
-df <- df[complete.cases(df),]
+df <- df |> 
+  filter(!is.na(records)) |> 
+  mutate(faks = case_when(
+    is.na(faks) ~ "Andere",
+    TRUE ~ as.character(faks))
+  )
+
+df <- df |> 
+  mutate(faks = case_when(
+    names == "Brandt" ~ "Andere",
+    TRUE ~ as.character(faks)
+  ))
 
 saveRDS(df, "data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
+
 
 
 
