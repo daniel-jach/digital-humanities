@@ -5,10 +5,10 @@ format:
     slide-number: true
     smaller: true
     scrollable: true
-    header-logo: style/logoTU.png
-    header-logo2: style/logoUB.png
-    theme: [default, style/custom.scss]
-    css: style/custom.css
+    header-logo: "_extensions/tudo-header/resources/img/logoTU.png"
+    header-logo2: "_extensions/tudo-header/resources/img/logoUB.png"
+    theme: [default, "_extensions/tudo-header/resources/css/custom.scss"]
+    css: ["_extensions/tudo-header/resources/css/custom.css", "assets/css/mystyle.css"]
     self-contained: true
     embedded-resources: true
 filters:
@@ -22,9 +22,6 @@ execute:
   warning: false
   message: false
   cache: false
-editor: 
-  markdown: 
-    wrap: 72
 bibliography: "./../literature/literature.yaml"
 ---
 
@@ -47,20 +44,27 @@ library(magick)
 
 ## Was ist DH (an der TUDO)?
 
-Der Begriff "Digital Humanities" wird meist methodisch verstanden [@berdan2013; @schwandt2020; @wachowiak2022]. 
+Der Begriff "Digital Humanities" wird meist methodisch verstanden
+[@berdan2013; @schwandt2020; @wachowiak2022].
 
-Gemeint sind Forschungsaktivitäten, die **informationstechnologische Methoden, Dienste und Ressourcen** in den **Gegenstandsgebieten der Geistes-, Kultur- und Sozialwissenschaften** einsetzen (an der TUDO die "höheren" Fakultäten 11 bis 17).
+Gemeint sind Forschungsaktivitäten, die **informationstechnologische
+Methoden, Dienste und Ressourcen** in den **Gegenstandsgebieten der
+Geistes-, Kultur- und Sozialwissenschaften** einsetzen (an der TUDO die
+"höheren" Fakultäten 11 bis 17).
 
 ### Digital Humanities Ruhr
 
 Bochum + Duisburg-Essen + Dortmund, April 2024 bis März 2026
 
-> Ziel des Projekts [...] ist die fachübergreifende Verankerung eines Lehrangebots zu grundlegenden digitalen Kompetenzen, Werkzeugen und Methoden in den Geistes- und Gesellschaftswissenschaften ([Webseite](https://dh-ruhr.ruhr-uni-bochum.de/)).
+> Ziel des Projekts \[...\] ist die fachübergreifende Verankerung eines
+> Lehrangebots zu grundlegenden digitalen Kompetenzen, Werkzeugen und
+> Methoden in den Geistes- und Gesellschaftswissenschaften
+> ([Webseite](https://dh-ruhr.ruhr-uni-bochum.de/)).
 
 ## Ausgangslage
 
 ```{r faculties_fdm-consulting_data}
-df <- readRDS("./../data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
+df <- readRDS("./../data/data_processed/beratungsprotokolle-fdm.Rda")
 
 df <- df |> 
   mutate(
@@ -118,14 +122,16 @@ plot(legend)
 dev.off()
 ```
 
-::: {.columns}
-:::: {.column width="68%"}
-![Anzahl der FDM-Beratungen seit Erhebungsbeginn bis 20.01.2026](img/barplot_fdm-consulting_faculties.svg)
-::::
-:::: {.column width="28%"}
-![](img/legend_fdm-consulting.svg)
-::::
+:::: columns
+::: {.column width="68%"}
+![Anzahl der FDM-Beratungen seit Erhebungsbeginn bis
+20.01.2026](img/barplot_fdm-consulting_faculties.svg)
 :::
+
+::: {.column width="28%"}
+![](img/legend_fdm-consulting.svg)
+:::
+::::
 
 ## Adressaten und Ziele
 
@@ -134,7 +140,7 @@ dev.off()
 **DH^e^** Empirisch Forschende der höheren Fakultäten mit digitaler Kompetenz und bestehendem FDM-Bedarf
 ::::
 :::: {.column width = "48%"}
-**DH^h^** Hermeneutisch Forschende der höheren Fakultäten mit digitalem Potential und Bedarf an Unterstützung bei der Einführung digitaler Methoden
+**DH^h^** Hermeneutisch Forschende der höheren Fakultäten mit digitalem Potential und Bedarf an Unterstützung bei der Einführung digitaler Methoden 
 ::::
 :::
 
@@ -145,48 +151,77 @@ dev.off()
 
 ## DH-Pioniere
 
-::: {.columns}
-:::: {.column width="68%"}
-![Forschenden der höheren Fakultäten mit Kontakten zum FDM (Anzahl der FD;-Beratungen pro Forschendem seit Erhebungsbeginn 2022 bis 20.01.2026)](img/wordcloud_fdm-consulting_researchers.svg)
-::::
-:::: {.column width="28%"}
-![](img/legend_fdm-consulting.svg)
-::::
+::::: columns
+::: {.column width="68%"}
+![Forschenden der höheren Fakultäten mit Kontakten zum FDM (Anzahl der FDM-Beratungen pro Forschendem seit Erhebungsbeginn 2022 bis 20.01.2026)](img/wordcloud_fdm-consulting_researchers.svg)
 :::
+
+::: {.column width="28%"}
+![](img/legend_fdm-consulting.svg)
+:::
+:::::
+
+## Use Case Kipfer (Theologie)
+
+[Sarah Kipfer](https://eth.ht.tu-dortmund.de/institut/personen/prof-dr-sara-kipfer/), [Professur für Altes Testament](https://eth.ht.tu-dortmund.de/professuren/altes-testament/)
+
+### Verlorenes Kulturerbe im Gazastreifen
+
+BMFTR-Antrag für die Datenerfassung von Kulturstätten in Gaza durch Erschließung von Archiven und Crowdsourcing
+
+> Ziel [...] ist eine Bilddatenerfassung zur Kulturgeschichte des Gazastreifens sowie deren wissenschaftliche Auswertung und Veröffentlichung [in einer open-access Datenbank].
+
+* Erhebung und Dokumentation von Geodaten des Gazastreifens
+* Digitalisierung von Fotomaterial aus diversen Archiven und Crowdsourcing
+* Publikation eines Datensatzes aus Fotos und Geodaten auf TUDOdata
 
 ## Erste/Nächste Schritte
 
 * **DH-Pioniere identifizieren**: Forschende in den höheren (und in den niedrigen) Fakultäten mit DH-Kompetenz/-Potential identifizieren (Input aus Fachreferat und Referat Forschungsförderung).
 * **Kontakte aufbauen, Gespräche führen**: DH-Pioniere in den höheren Fakultäten kontaktieren und im Gespräch ihre Bedarfe erheben.
 * **Austauschforum etablieren**: Einen Digital Humanities-"Stammtisch" als Forum für den Peer-to-Peer-Austausch von DH-affinen Forschenden organisieren.
-* **Studentischer Austausch**: Tandem-Bachelorarbeiten zwischen Studierenden der Informatik/Statistik und Studierenden der Geisteswissenschaften anstoßen.
 
 ## Kontakte aufbauen, Gespräche führen
 
-In informellen Gesprächen gewinnen wir einen ersten Eindruck von den **Forschungsaktivitäten und -methoden**, können gezielt **Bedarfe abfragen**, bestehende **FDM-Dienste bewerben** und **geplante Projekte pitchen**.
+In Gesprächen gewinnen wir einen ersten Eindruck von den **Forschungsaktivitäten und -methoden** der Gesprächspartner, können gezielt **Bedarfe abfragen**, bestehende **FDM-Dienste bewerben** und **geplante Projekte pitchen** [Interviewleitfaden @kletke2022].
 
-<br>
 
-### Erstgespräch Ellen Hilf (SFS)
+||      | |
+|------|---------------------|---|
+|**Pilotphase**|Gespräche mit **DH-Pionieren** mit FDM-Bedarf und etabliertem Kontakt: Hilf (SFS), Wallner (15), Mohrmann (16) |Feb&nbsp;'26|
+|**Kontaktephase**|Gespräche mit **ausgewählten Forschenden mit DH-Potential** aus Fakultäten 17 bis 10, **Kandidatenlisten** entstehen gegenwärtig mit Unterstützung des Fachreferats und der Forschungsförderung|Mai&nbsp;'26|
+|**Auswertung**|Zusammenschau der **identifizierten FDM-Bedarfe** als Grundlage für die Entwicklung eines **bedarfsgerechten FDM-Portfolios**|Jul&nbsp;'26|
 
-{{< iconify rivet-icons:question-mark-solid style="color:#83B818;" >}} Welche typischen FDM-Szenarien gibt es an der SDS? 
+: "Fahrplan"
+
+
+## Erstgespräch Ellen Hilf (SFS)
+
+22.01.2026
+
+{{< iconify rivet-icons:question-mark-solid style="color:#83B818;" >}} Welche typischen FDM-Szenarien gibt es an der SFS?
 
 {{< iconify rivet-icons:question-mark-solid style="color:#83B818;" >}} Welche FDM-Bedarfe entstehen an der SFS?
 
 <br>
 
-{{< iconify rivet-icons:exclamation-mark-circle-solid style="color:#83B818;" >}} umfangreiche Einwilligungserklärungen für Probanden 
+{{< iconify rivet-icons:exclamation-mark-circle-solid style="color:#83B818;" >}}
+umfangreiche Einwilligungserklärungen für Probanden
 
-{{< iconify rivet-icons:exclamation-mark-circle-solid style="color:#83B818;" >}} aufwendige Transkription von Interviewdaten 
+{{< iconify rivet-icons:exclamation-mark-circle-solid style="color:#83B818;" >}}
+aufwendige Transkription von Interviewdaten
 
-{{< iconify rivet-icons:exclamation-mark-circle-solid style="color:#83B818;" >}} schwierige Anonymisierung qualitativer Daten
+{{< iconify rivet-icons:exclamation-mark-circle-solid style="color:#83B818;" >}}
+schwierige Anonymisierung qualitativer Daten
 
+## Ausblick
 
-
+-   **Studentischer Austausch**: Tandem-Bachelorarbeiten zwischen
+    Studierenden der Informatik/Statistik und Studierenden der
+    Geisteswissenschaften anstoßen.
+-   **Use Case Mohrmann (Musik)**: Workflow für öffentlich-rechtliche
+    Datensätze von der Einwilligungserklärung bis zur Archivierung auf
+    TUDOdata.
+-   **Semiotik für die IT**:
 
 ## Literatur
-
-
-
-
-

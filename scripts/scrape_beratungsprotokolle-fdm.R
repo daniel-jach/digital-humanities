@@ -6,7 +6,7 @@ library(viridis)
 
 setwd("C:/Users/mdanjach/Sciebo/home/digital-humanities/")
 
-files <- list.files("data/data_raw/beratungsprotokolle_html_2026-01-20/", full.names = TRUE)
+files <- list.files("data/data_raw/beratungsprotokolle-fdm_html_2026-01-20/", full.names = TRUE)
 
 faks <- vector(length = length(files))
 dates <- vector(length = length(files))
@@ -47,8 +47,8 @@ df <- df |>
   mutate(
     across(1:4, ~ na_if(., "FALSE")))
 
-write.csv(df, "data/data_processed/beratungsprotokolle_html_2026-01-20.csv")
-df <- read_csv("data/data_processed/beratungsprotokolle_html_2026-01-20_korrigiert.csv")
+write.csv(df, "data/data_processed/beratungsprotokolle-fdm.csv")
+df <- read_csv("data/data_processed/beratungsprotokolle-fdm_korrigiert.csv")
 
 df <- df |> 
   filter(!is.na(records)) |> 
@@ -63,7 +63,7 @@ df <- df |>
     TRUE ~ as.character(faks)
   ))
 
-saveRDS(df, "data/data_processed/beratungsprotokolle_html_2026-01-20.Rda")
+saveRDS(df, "data/data_processed/beratungsprotokolle-fdm.Rda")
 
 
 
