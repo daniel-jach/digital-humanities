@@ -1,0 +1,108 @@
+---
+title: "Geist.digital"
+subtitle: "Forschungsnahe Dienste & Ressourcen für Geisteswissenschaften im digitalen Zeitalter"
+date: today
+date-format: "long"
+format: 
+  revealjs:
+    slide-number: true
+    smaller: true
+    scrollable: true
+    header-logo: "_extensions/tudo-header/resources/img/logoTU.png"
+    header-logo2: "_extensions/tudo-header/resources/img/logoUB.png"
+    theme: [default, "_extensions/tudo-header/resources/css/custom.scss"]
+    css: ["_extensions/tudo-header/resources/css/custom.css", "assets/css/mystyle.css"]
+    self-contained: true
+    embedded-resources: true
+filters:
+  - tudo-header
+  - "assets/lua/pandoc-quotation.lua"
+lang: "de"
+editor_options: 
+  chunk_output_type: console
+execute:
+  echo: false  
+  warning: false
+  message: false
+  cache: false
+bibliography: "./../literature/literature.yaml"
+toc: false
+toc-title: "Inhaltsverzeichnis"
+toc-depth: 1
+slide-level: 2
+---
+
+## Forschungsdatenmanagement (FDM)
+
+{{< iconify streamline-plump:industry-innovation-and-infrastructure-solid width=200px style="color: #83B818; float: left; margin: 25px;" >}} 
+
+Unter *Forschungsdaten* sind prinzipiell alle Arten von Materialien zu verstehen, die während einer wissenschaftlichen Tätigkeit entstehen, die entwickelt oder entdeckt werden und die zur Beantwortung einer Forschungsfrage beitragen. 
+
+Die Universitätsbibliothek unterstützt Sie im Umgang mit Ihren Forschungsdaten und sorgt für deren nachhaltige Erschließung und Aufbewahrung.  
+
+* Lektorate von Drittmittelanträgen hinsichtlich FDM in den Geisteswissenschaften
+* Beratungen und Workshops zur Dokumentation von Forschungsprozessen und nachhaltiger Datennutzung
+* Beratungen und Workshops zu hilfreichen digitalen Tools für das FDM
+
+**TUDOnotes** Elektronisches Notizbuch zur verbesserten Dokumentation, Kollaboration und Nachvollziehbarkeit wissenschaftlicher Arbeitsschritte ([Probeinstanz](https://web.elabftw.stage.itmc.tu-dortmund.de/login.php))
+
+## Digitale Methoden und Kompetenzen
+
+{{< iconify streamline:computer-pc-desktop-remix width=200px style="color: #83B818; float: left; margin: 25px;" >}} 
+
+Computerunterstütztes Arbeiten und der problemorientierte Einsatz digitaler Werkzeuge sind ein integraler Bestandteil wissenschaftlicher Methoden- und Informationskompetenz in den Geisteswissenschaften.
+
+Die Universitätsbibliothek berät und unterstützt Sie bei der Auswahl und Anwendung geeigneter digitaler Methoden und begleitet Sie bei deren Integration in Forschung und Lehre.
+
+* Beratung und Workshops zum Einsatz digitaler Forschungswerkzeuge für die Erstellung, Aufbereitung, Auswertung und Visualisierung von Daten und Metadaten
+* Schulungen zur Vermittlung digitaler wissenschaftlicher Arbeitstechniken
+
+**Text und Data Mining** Automatisierte Erhebung und formale Analyse großer Textmengen aus dem Internet und aus Datenbanken (z. B. [Nexis Uni](https://dbis.ur.de/UBDO/resources/1670?lang=de)) zum Entdecken von häufigen Sprachgebrauchsmustern, diskursiven Entwicklungen oder Nutzereinstellungen.
+
+## Technische Infrastruktur
+
+{{< iconify pixel:technology width=200px style="color: #83B818; float: left; margin: 25px;" >}}
+
+Die Universitätsbibliothek versorgt Forschende aus den Geisteswissenschaften mit der nötigen technischen Infrastruktur zur Digitalisierung ihrer Forschung und Lehre. In Zusammenarbeit mit dem IT- & Medien Centrum (ITMC) sowie Partnerhochschulen in der Region stellen wir Ihnen Datenbanken, eine Rechner- und Serverinfrastruktur, digitale Mediengeräte und Expertise für die Einrichtung und den Betrieb spezifischer Software bereit.
+
+**Virtuelle Maschinen** Einrichtung und Betrieb von fachspezifischer Software über virtuelle Maschinen auf Servern des ITMC
+
+**Hightech-Geräteausleihe** Ausleihe und Einweisung in die Nutzung digitaler Mediengeräte wie beispielsweise 360-Grad-Kameras und Virtual-Reality-Brillen
+
+## Experimentelle Umgebungen
+
+{{< iconify streamline:ai-gaming-spark width=200px style="color: #83B818; float: left; margin: 25px;" >}}
+
+Die Universitätsbibliothek betreibt zwei innovative und experimentelle Räume, in denen spielerisch gelernt, geforscht und kreativ gearbeitet wird, sowohl analog als auch digital. Beide Räume verstehen sich als offene Lernumgebungen, die Neugier wecken und den kreativen Umgang mit digitalen Technologien fördern sollen.
+
+::: {.clear}
+:::
+
+**Hybrid Learning Center (HyLeC) Makerspace** Vielfältige Möglichkeiten zum (angeleiteten) Ausprobieren und Selbermachen, beispielsweise ein 3D-Körperscanner und ein Podcast- und Videostudio
+
+**Game Lab** Kostenfreier Zugang zu Hardware und Software rund um das Thema Videospiele
+
+## Publikation & Sichtbarkeit
+
+{{< iconify glyphs:books-bold width=200px style="color: #83B818; float: left; margin: 25px;" >}}
+
+Die Universitätsbibliothek unterstützt Sie umfassend dabei, Ihre Forschungs- und Lehrmaterialien in innovativen, offenen und digitalen Formaten zu veröffentlichen. Unser Ziel ist es, wissenschaftliche Ergebnisse im Sinne von Open Science und Open Education sichtbar, zugänglich und nachnutzbar zu machen.
+
+::: {.clear}
+:::
+
+**TUDObooks** Publikation von digitalen Monographien und neuartigen, vernetzten, multimedialen Formaten auf unserer universitätseigenen Open-Access-Plattform
+
+**TUDOdata** Archivierung und Veröffentlichung von Forschungsdaten auf unserem universitätseigenen Open-Access-Repositorium
+
+
+
+## Archivierung & Bewahrung (kommt)
+
+{{< iconify fa-solid:archive width=200px style="color: #83B818; float: left; margin: 25px;" >}}
+
+Das im Jahr 2012 gegründete Archiv der Technischen Universität Dortmund verwahrt Unterlagen zur Geschichte der im Jahr 1968 gegründeten Universität und ihrer Vorgängereinrichtungen. Darüber hinaus bewahrt und pflegt unser Archiv eine Reihe einzigartiger Sammlungen. 
+
+Das Archiv wird als zentraler Partner für die kultur- und geisteswissenschaftliche Forschung ausgebaut. Die Sammlungen werden in den Katalog Plus integriert, sodass die einzelnen Sammlungsstücke in einem digitalen Lesesaal auffindbar, betrachtbar und vernetzt sein werden.
+
+
