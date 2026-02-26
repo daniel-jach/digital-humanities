@@ -5,12 +5,9 @@
 
 !/scripts/
 
-!/presentation/
-/presentation/*
-!/presentation/*.qmd
-
-!/outreach/
-/outreach/*
+!/slides/
+/slides/*
+!/slides/*.qmd
 
 !/data/
 /data/*
