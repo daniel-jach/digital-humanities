@@ -10,7 +10,7 @@
 !/presentation/*.qmd
 
 !/outreach/
-/outreach/*
+!/outreach/*
 
 !/data/
 /data/*
