@@ -8,6 +8,7 @@
 !/presentation/
 /presentation/*
 !/presentation/*.qmd
+!/presentation/*.html
 
 !/outreach/
 !/outreach/*
