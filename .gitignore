@@ -5,6 +5,10 @@
 
 !/scripts/
 
+!/projects/
+
+/projects/hoerfunk/data/*
+
 !/presentation/
 /presentation/*
 !/presentation/*.qmd
