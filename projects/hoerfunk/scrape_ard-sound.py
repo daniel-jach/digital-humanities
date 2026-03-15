@@ -6,7 +6,9 @@ import pandas as pd
 from tqdm import tqdm
 import datetime
 from bs4 import BeautifulSoup as bs
+import os, re
 
+os.chdir("C:/home/digital-humanities/projects/hoerfunk")
 
 # Create a data folder for the podcast
 podcast_title = re.sub(' ', '-', podcast_title).lower()
@@ -152,6 +154,10 @@ metadt = metadt.merge(df, how='left')
 # Add hyperlinks for better handling
 metadt['episode_audio'] = '=HYPERLINK(".\\mp3\\' + metadt["episode_id"] + '.mp3", "Link")'
 metadt['episode_image'] = '=HYPERLINK(".\\img\\' + metadt["episode_id"] + '.jpg", "Link")'
+
+metadt['episode_downloadUrl'] = '=HYPERLINK("' + metadt["episode_downloadUrl"] + '", "Link")'
+metadt['episode_ardsoundsUrl'] = '=HYPERLINK("' + metadt["episode_ardsoundsUrl"] + '", "Link")'
+
 
 # Save metadata
 metadt = metadt.fillna('N/A', inplace=True)
